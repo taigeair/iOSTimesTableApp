@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="timestable" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="1" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="n4s-D7-3zU">
+                                <rect key="frame" x="14" y="100" width="386" height="31"/>
+                                <connections>
+                                    <action selector="sliderValue:" destination="BYZ-38-t0r" eventType="valueChanged" id="zNW-cT-Mdh"/>
+                                </connections>
+                            </slider>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="e3h-2Y-tKd">
+                                <rect key="frame" x="16" y="150" width="382" height="586"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="CiI-Aj-KfZ">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CiI-Aj-KfZ" id="kLn-eu-yXg">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="0lK-yf-OOL"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="zi1-d9-UCQ"/>
+                                </connections>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vdb-OJ-vM6">
+                                <rect key="frame" x="281" y="30" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="AJW-q5-dtL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Erf-Iz-NgQ"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEp-0X-2mP">
+                                <rect key="frame" x="341" y="30" width="37" height="30"/>
+                                <state key="normal" title="Enter">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="enterNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7fx-87-4S7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vdb-OJ-vM6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="2WD-iP-27N"/>
+                            <constraint firstItem="CEp-0X-2mP" firstAttribute="leading" secondItem="vdb-OJ-vM6" secondAttribute="trailing" constant="10" id="4P4-45-RaO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CEp-0X-2mP" secondAttribute="trailing" constant="20" id="Af0-lM-A1Y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="n4s-D7-3zU" secondAttribute="trailing" id="Atd-F9-lEt"/>
+                            <constraint firstItem="n4s-D7-3zU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="GQE-uz-fVa" userLabel="I"/>
+                            <constraint firstItem="CEp-0X-2mP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="30" id="Gb0-y3-pJI"/>
+                            <constraint firstItem="vdb-OJ-vM6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="JGW-zI-HaT"/>
+                            <constraint firstItem="e3h-2Y-tKd" firstAttribute="top" secondItem="n4s-D7-3zU" secondAttribute="bottom" constant="20" id="Pfh-31-DGK"/>
+                            <constraint firstItem="n4s-D7-3zU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="100" id="Ud0-eG-Pcz"/>
+                            <constraint firstItem="e3h-2Y-tKd" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Wc3-ff-YCa"/>
+                            <constraint firstItem="e3h-2Y-tKd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="g6Q-yJ-dq4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="e3h-2Y-tKd" secondAttribute="bottom" id="mTH-6m-8fv"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="JGW-zI-HaT"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="labelValue" destination="vdb-OJ-vM6" id="Gcm-6I-VBa"/>
+                        <outlet property="slider" destination="n4s-D7-3zU" id="3UD-lf-stt"/>
+                        <outlet property="table" destination="e3h-2Y-tKd" id="gua-0R-IEk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
